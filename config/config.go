@@ -43,22 +43,6 @@ func (h *customHandler) Handle(ctx context.Context, r slog.Record) error {
 	return err
 }
 
-// 获取日志级别的中文描述
-func getLevelString(level slog.Level) string {
-	switch level {
-	case slog.LevelDebug:
-		return "调试"
-	case slog.LevelInfo:
-		return "信息"
-	case slog.LevelWarn:
-		return "警告"
-	case slog.LevelError:
-		return "错误"
-	default:
-		return "未知"
-	}
-}
-
 func (h *customHandler) WithAttrs(attrs []slog.Attr) slog.Handler {
 	return h
 }
